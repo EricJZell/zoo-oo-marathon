@@ -4,10 +4,10 @@ end
 
 class Zoo
   attr_reader :name, :cages, :employees
-  def initialize(name, cages = 10)
+  def initialize(name, number_of_cages = 10)
     @name = name
     @cages = []
-    cages.times do
+    number_of_cages.times do
       @cages << Cage.new
     end
     @employees = []
@@ -32,7 +32,7 @@ class Zoo
       string += employee.greet + "\n"
     end
     @cages.each do |cage|
-      unless cage.empty? 
+      unless cage.empty?
       string += cage.animal.speak + "\n"
     end
     end
